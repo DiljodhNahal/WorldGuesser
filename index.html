@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+        <!-- Main CSS -->
+        <link href="assets/main.css" rel="stylesheet" type="text/css" />
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/earth.png" />
+
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+
+        <!-- jVectorMap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.world.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css" rel="stylesheet">
+
+        <title>World Guesser</title>
+    </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">
+                <img height="35" src="assets/earth.png" alt="..." />
+                World Guesser
+            </a>
+            <div class="row align-items-center align-content-center">
+                <div class="col-md-3">
+                    <div style="justify-content: center; align-items: center;">
+                        <div id="timer" class="navbar-brand" style="display: none;">15:00</div>
+                        <a id="giveUp" href="#" class="text-primary" style="display: none;">Give Up?</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input id="countryInput" type="text" class="form-control" placeholder="Enter Country Name..." style="display: none;" />
+                </div>
+                <div id="score" class="col-md-1 navbar-brand" style="margin-left: auto; display: none;">
+                    <span id="currentScore">0</span>/<span id="maxScore">0</span>
+                </div>
+            </div>
+            <button id="startBtn"class="btn btn-primary">Start Game   <i class="fa fa-play"></i></button>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section id="content" class="page-section bg-primary">
+        <div class="container">
+            <div id="vmap" style="height: 80vh;"></div>
+        </div>
+    </section>
+
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; World Guesser 2021</small></div>
+    </div>
+
+
+    <!-- Game End Modal -->
+    <div class="portfolio-modal modal fade" id="gameModal" tabindex="-1" aria-labelledby="gameModal" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button id="btnClose" class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Modal - Title-->
+                                <h2 id="finalScore" class="portfolio-modal-title text-secondary text-uppercase mb-0"></h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!--  Modal - Table-->
+                                <div class="mb-3">
+                                    <div class="row" style="max-height: 300px; overflow-y: scroll;">
+                                        <div class="col-md-6">
+                                            <table class="table">
+                                                <tbody id="tableBody1"></tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <table class="table">
+                                                <tbody id="tableBody2"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button id="closeModal" class="btn btn-primary" href="#!" >
+                                    <i class="fas fa-redo-alt fa-fw"></i>
+                                    Play Again?
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Main JS -->
+    <script src="assets/main.js"></script>
+
+  </body>
+</html>
